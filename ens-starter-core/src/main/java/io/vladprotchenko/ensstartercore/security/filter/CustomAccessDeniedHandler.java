@@ -1,6 +1,5 @@
 package io.vladprotchenko.ensstartercore.security.filter;
 
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +11,7 @@ import java.io.IOException;
 
 @Slf4j
 @Component
-public class CustomAccessDeniedFilter implements AccessDeniedHandler {
+public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
     @Override
     public void handle(

@@ -5,9 +5,7 @@ import io.vladprotchenko.ensstartercore.security.dto.AdminDetailsDto;
 import io.vladprotchenko.ensstartercore.security.model.UserDetailsImpl;
 import io.vladprotchenko.ensstartercore.security.model.constant.UserRole;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,7 +14,7 @@ import static io.vladprotchenko.ensstartercore.security.model.constant.JwtConsta
 import static io.vladprotchenko.ensstartercore.security.filter.RoleSecurityExpression.ANONYMOUS_USER;
 
 @Slf4j
-public class AuthFacade {
+public class AuthenticationFacade {
 
     private UserDetailsImpl validateAuthenticatedUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
