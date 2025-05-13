@@ -1,6 +1,7 @@
 package io.vladprotchenko.ensstartercore.security.filter;
 
 import io.vladprotchenko.ensstartercore.exception.EnsServiceException;
+import io.vladprotchenko.ensstartercore.exception.custom.AuthorizationException;
 import io.vladprotchenko.ensstartercore.security.model.UserDetailsImpl;
 import io.vladprotchenko.ensstartercore.security.service.JwtTokenValidator;
 import jakarta.servlet.FilterChain;
@@ -52,7 +53,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
                 return;
             }
 
-        } catch (EnsServiceException e) {
+        } catch (AuthorizationException e) {
             log.error("Cannot set user authentication: {}", e.getMessage());
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
             return;
